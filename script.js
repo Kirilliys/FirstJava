@@ -1,9 +1,27 @@
-alert("Hello my first script"); // выводит информацию в модальном окне
-const title = 10; // создание переменной
-const screens = 10;
-const screenPrice = 10;
-const rollback = 10;
-const fullPrice = 10;
-const adaptive = 10;
 
+const title = ("first"); // создание переменной
 console.log(title);
+
+const screens = ("Простые, Сложные, Интерактивные");
+console.log(screens.length);
+console.log(screens.toLowerCase().split(", "));
+
+
+let screenPrice = 400;
+console.log(screenPrice,"rub");
+
+let rollback = 56;
+rollback = rollback / 100;
+
+let fullPrice = 7000;
+console.log(fullPrice,"rub");
+
+rollback = fullPrice * rollback;
+console.log(rollback);
+
+
+
+
+let adaptive = true;
+console.log(adaptive);
+
