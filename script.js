@@ -1,27 +1,27 @@
+let num = 266219;
 
-const title = ("first"); // создание переменной
-console.log(title);
-
-const screens = ("Простые, Сложные, Интерактивные");
-console.log(screens.length);
-console.log(screens.toLowerCase().split(", "));
+num = String(num);
 
 
-let screenPrice = 400;
-console.log(screenPrice,"rub");
+ let call = num.split("").reduce(function(a,b) {
+  return a * b;
+})
+console.log(call);
 
-let rollback = 56;
-rollback = rollback / 100;
-
-let fullPrice = 7000;
-console.log(fullPrice,"rub");
-
-rollback = fullPrice * rollback;
-console.log(rollback);
+call **= 3;
+call = String (call)
+console.log(call.substring(0,2));
 
 
 
+/*
+num = String(num).split("").reduce(function(a,b) {
+  return a * b;
+});
 
-let adaptive = true;
-console.log(adaptive);
+console.log(typeof num);
 
+num **= 3;
+console.log(num);
+
+*/
