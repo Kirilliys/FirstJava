@@ -15,13 +15,14 @@ console.log(call.substring(0,2));
 
 
 /*
-num = String(num).split("").reduce(function(a,b) {
+num = num.split("").reduce(function(a,b) {
   return a * b;
 });
 
-console.log(typeof num);
+console.log(num);
 
 num **= 3;
-console.log(num);
+num = String(num);
+console.log(num.substring(0,2));
 
 */
