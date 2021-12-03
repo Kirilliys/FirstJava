@@ -3,7 +3,7 @@ const arg = prompt('Введите что-нибудь');
 
 
 function  funs(arg){
-  if (typeof arg != "string") {
+  if (typeof arg !== 'string') {
     return 'Необходимо ввести строчное значение'
   } else {
     arg = arg.trim();
