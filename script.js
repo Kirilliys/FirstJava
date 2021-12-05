@@ -1,9 +1,8 @@
 
 const arg = prompt('Введите что-нибудь');
 
-
 function  funs(arg){
-  if (typeof arg !== 'string') {
+  if (!isNaN(Number(arg))) {
     return 'Необходимо ввести строчное значение'
   } else {
     arg = arg.trim();
