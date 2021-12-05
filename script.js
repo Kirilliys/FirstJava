@@ -15,7 +15,7 @@ const showTypeOf = function(variable){
 }
 
 const isNumber = function(num) {
-  return !isNaN(parseFloat(num)) && isFinite(num)
+  return !isNaN(parseFloat(num)) && isFinite(num) && !num.trim().length
 }
 
 const asking = function() {
