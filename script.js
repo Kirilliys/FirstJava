@@ -14,12 +14,12 @@ const showTypeOf = function(variable){
 }
 
 const isNumber = function(num) {
-  return !isNaN(parseFloat(num)) && isFinite(num) && !num.trim().length
+  return !isNaN(parseFloat(num)) && isFinite(num) 
 }
 
 const asking = function() {
   do {
-    let screenPrice = prompt('Сколько будет стоить данная работа?', 'пример:1200')
+     screenPrice = +prompt('Сколько будет стоить данная работа?', 'пример:1200')
   } while(!isNumber(screenPrice))
 }
 
