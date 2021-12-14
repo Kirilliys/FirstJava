@@ -1,24 +1,33 @@
 'use strict'
 
-let title = prompt('Как называется ваш проект?');
-let screens = prompt('Какие типы экранов нужно разработать?','пример: "Простые, Сложные, Интерактивные"');
+let title 
+let screens 
 let screenPrice 
-let adaptive = confirm('Нужен ли адаптив на сайте?');
+let adaptive 
 let rollback = 56;
-
+let allServicePrices
+let fullPrice
+let ServicePercentPrice
 let service1 
 let service2 
 
+const appData = {
 
+}
 
 const isNumber = function(num) {
   return !isNaN(parseFloat(num)) && isFinite(num) 
 }
 
 const asking = function() {
+  title = prompt('Как называется ваш проект?');
+  screens = prompt('Какие типы экранов нужно разработать?','пример: "Простые, Сложные, Интерактивные"');
+
   do {
      screenPrice = +prompt('Сколько будет стоить данная работа?', 'пример:1200')
   } while(!isNumber(screenPrice))
+
+  adaptive = confirm('Нужен ли адаптив на сайте?');
 }
 
 
@@ -29,7 +38,7 @@ const getAllServicePrices = function () {
 
           for (let i = 0; i < 2; i++){
             let price = 0
-            
+
             if (i === 0){
               service1 = prompt('Какой дополнительный тип услуги нужен?')
             } else if (i === 1) {
