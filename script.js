@@ -8,6 +8,7 @@ const appData = {
  rollback: 56,
  service1: '', 
  service2: '',
+
  
  asking: function () {
    appData.title = prompt('Как называется ваш проект?')
@@ -25,8 +26,8 @@ const appData = {
   },
 
   getAllServicePrices: function () {
-          let sum = 0
-
+          let sum = 0;
+          let plusSum;
           for (let i = 0; i < 2; i++){
             if (i === 0){
               appData.service1 = prompt('Какой дополнительный тип услуги нужен?')
@@ -34,12 +35,13 @@ const appData = {
               appData.service2 = prompt('Какой дополнительный тип услуги нужен?')
             }
             do{
-              sum += +prompt('Сколько это будет стоить?')
-            } while (!this.isNumber(sum))
+              plusSum = +prompt('Сколько это будет стоить?')
+            } while (!this.isNumber(plusSum))
+            sum += +plusSum;
 
           }
 
-          return sum
+          return sum;
    },
 
    getTitle: function(title){
@@ -71,18 +73,36 @@ const appData = {
     default:
       return 'Что-то пошло не так'
    }
-  }
+  },
 
-}
+  logger: function() {
+    for (let key in appData) {
+      console.log(key + " " + appData[key]);
+    }
+    console.log(appData.fullPrice);
+    console.log(appData.servicePersentPrice);
+    
+  },
+
+  start: function(){
+   appData.asking();
+   appData.allServicePrices = appData.getAllServicePrices();
+   appData.fullPrice = appData.getFullPrice(appData.screenPrice,appData.allServicePrices);
+   appData.servicePersentPrice = appData.getServicePercentPrices();
+   appData.title = appData.getTitle();
+   appData.logger();
+
+ },
+
+};
+
+appData.start();
 
 
-appData.asking()
-appData.allServicePrices = appData.getAllServicePrices()
-appData.fullPrice = appData.getFullPrice(appData.screenPrice,appData.allServicePrice)
-appData.servicePersentPrice = appData.getServicePercentPrices()
-appData.title = appData.getTitle()
 
 
 
-console.log(fullPrice);
-console.log(appData.servicePersentPrice);
+
+
+
+
