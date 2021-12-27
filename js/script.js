@@ -1,4 +1,18 @@
+const but = document.getElementsByClassName('handler_btn')
+const plus = document.querySelector('.screen-btn')
 
+const percent = document.querySelectorAll('.other-items')
+const number = document.querySelectorAll('.other-items')
+
+const roll = document.querySelector('input[type="range"]').closest('.rollback')
+
+
+const total = document.getElementsByClassName('total-input')
+// загружаем total в массив
+const total2 = []
+for(let i in total) total2[i] = total[i]
+
+let scr = document.querySelectorAll('.screen')
 
 const appData = {
  title: '', 
@@ -14,16 +28,15 @@ const appData = {
    appData.addPrices();
    appData.getFullPrice();
    appData.getServicePercentPrices();
-   appData.getTitle();
 
    appData.logger();
 
  },
  
  asking: function () {
-   do{
+   
      appData.title = document.getElementsByTagName('h1')
-   } while(appData.isString(appData.title))
+  
 
     for (let i = 0; i < 2; i++) {
       let name
@@ -76,11 +89,12 @@ const appData = {
     return !isNaN(parseFloat(num)) && isFinite(num) 
   },
 
-
+/* Большие и маленькие буквы
    getTitle: function(title){
   title = appData.title.trim().toLowerCase();
   appData.title = appData.title[0].toUpperCase() + appData.title.substring(1);
   },
+*/
 
   getFullPrice: function(){
   appData.fullPrice =  appData.screenPrice + appData.allServicePrices
@@ -109,9 +123,33 @@ const appData = {
   },
 
   logger: function() {
+    //перебор Объекта
     for (let key in appData) {
       console.log(key + " " + appData[key]);
+    } 
+    console.log(appData.title[0]);
+    console.log(but);
+    console.log(plus);
+
+    for (let item of percent) {
+      if(item.matches('.percent')) console.log(item);
     }
+    
+    for (let item of number) {
+      if(item.matches('.number')) console.log(item);
+    }
+
+
+    console.log(roll);
+
+    total2.forEach(function(element){
+      console.log(element);
+    })
+
+    for(let key of scr){
+      console.log(key);
+    }
+
     console.log(appData.fullPrice);
     console.log(appData.servicePersentPrice);
     console.log(appData.screens);
