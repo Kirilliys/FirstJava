@@ -1,10 +1,12 @@
+const title = document.getElementsByTagName('h1')
 const but = document.getElementsByClassName('handler_btn')
 const plus = document.querySelector('.screen-btn')
 
 const percent = document.querySelectorAll('.other-items')
 const number = document.querySelectorAll('.other-items')
 
-const roll = document.querySelector('input[type="range"]').closest('.rollback')
+const rollbackInput = document.querySelector('.rollback > .main-controls__range > [type=range]')
+const rollbackSpan = document.querySelector('.rollback > .main-controls__range > .range-value')
 
 
 const total = document.getElementsByClassName('total-input')
@@ -15,7 +17,6 @@ for(let i in total) total2[i] = total[i]
 let scr = document.querySelectorAll('.screen')
 
 const appData = {
- title: '', 
  screens: [], 
  screenPrice: 0, 
  adaptive: true, 
@@ -35,9 +36,6 @@ const appData = {
  
  asking: function () {
    
-     appData.title = document.getElementsByTagName('h1')
-  
-
     for (let i = 0; i < 2; i++) {
       let name
       do{
@@ -127,7 +125,7 @@ const appData = {
     for (let key in appData) {
       console.log(key + " " + appData[key]);
     } 
-    console.log(appData.title[0]);
+    console.log(title);
     console.log(but);
     console.log(plus);
 
@@ -140,7 +138,8 @@ const appData = {
     }
 
 
-    console.log(roll);
+    console.log(rollbackInput);
+    console.log(rollbackSpan);
 
     total2.forEach(function(element){
       console.log(element);
