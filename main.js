@@ -29,12 +29,11 @@ two[51].after(two[54])
 two[54].after(two[56])
 
 // Добавление главы
-const es = document.querySelectorAll('ul > li')
-const es6 = es[2].cloneNode(true)
+
+const es6 = two[2].cloneNode(true)
 
 es6.textContent = 'Глава 8: За пределами ES6'
 two[25].append(es6)
-
 
 
 books[0].prepend(book[1]) // в самое начало элемент
