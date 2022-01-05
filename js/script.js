@@ -1,5 +1,5 @@
-const title = document.getElementsByTagName('h1')
-const but = document.getElementsByClassName('handler_btn')
+const title = document.getElementsByTagName('h1')[0]
+const startBtn = document.getElementsByClassName('handler_btn')[0]
 const plus = document.querySelector('.screen-btn')
 
 const percent = document.querySelectorAll('.other-items')
@@ -24,14 +24,30 @@ const appData = {
  services: {}, 
  allServicePrices: 0,
 
+ init: function(){
+   appData.addTitle()
+
+  startBtn.addEventListener('click',appData.start)
+ },
+
+ addTitle: function(){
+   document.title = title.textContent
+ },
   start: function(){
-   appData.asking();
+    appData.addScreens()
+  /* appData.asking();
    appData.addPrices();
    appData.getFullPrice();
    appData.getServicePercentPrices();
 
    appData.logger();
+*/
+ },
 
+ addScreens: function(){
+   scr.forEach(function(screen){
+     console.log(screen);
+   })
  },
  
  asking: function () {
@@ -125,8 +141,7 @@ const appData = {
     for (let key in appData) {
       console.log(key + " " + appData[key]);
     } 
-    console.log(title);
-    console.log(but);
+
     console.log(plus);
 
     for (let item of percent) {
@@ -145,10 +160,6 @@ const appData = {
       console.log(element);
     })
 
-    for(let key of scr){
-      console.log(key);
-    }
-
     console.log(appData.fullPrice);
     console.log(appData.servicePersentPrice);
     console.log(appData.screens);
@@ -157,7 +168,7 @@ const appData = {
 
 };
 
-appData.start();
+appData.init();
 
 
 
